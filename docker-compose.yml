@@ -1,0 +1,13 @@
+version: '3'
+services:
+       nagios:
+        container_name: nagios
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./nagios:/etc/nagios
+        ports:
+            - '80:80'
+            - '9001:9001'
