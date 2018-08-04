@@ -3,7 +3,7 @@ FROM fedora:27
 ENV NAGIOS_PASSWD nagios
 
 RUN dnf upgrade --refresh -y
-RUN dnf install -y httpd nagios nagios-plugins-all supervisor
+RUN dnf install -y httpd nagios nagios-plugins-all nagios-plugins-nrpe supervisor
 
 RUN htpasswd -db /etc/nagios/passwd "nagiosadmin" ${NAGIOS_PASSWD}
 
